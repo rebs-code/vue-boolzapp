@@ -32,23 +32,31 @@
   <body>
     <div id="app">
       <div class="main-container col-10">
-        <div class="right-col col-4">
+        <div class="left-col flex-shrink-0">
           <header>
             <div class="profile">
               <div>
-                <img class="social-icon" src="img/avatar_io.jpg" alt="avatar" />
+                <img class="circled-icon" src="img/avatar_io.jpg" alt="avatar" />
               </div>
               <h6 class="mb-0">Utente</h6>
             </div>
-
-            <div class="header-right">
+            <div class="header-left">
               <i class="fa-solid fa-circle-notch"></i>
               <i class="fa-solid fa-message"></i>
               <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
           </header>
+          <div class="notif-alert d-flex align-items-center">
+            <div class="circled-icon bg-white">
+                <i class="fa-solid fa-bell-slash fs-5"></i>
+            </div>
+            <div class="notif-alert-info">
+                <h5 class="mb-0 fs-6">Ricevi notifiche di nuovi messaggi</h6>
+                <h6 class="mb-0 text-decoration-underline text-secondary">Attiva notifiche desktop</h6>
+            </div>
+          </div>
         </div>
-        <div class="left-col col-8"></div>
+        <div class="right-col flex-grow-1"></div>
       </div>
     </div>
   </body>
