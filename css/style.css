@@ -82,11 +82,40 @@ img {
 /* select second son of notif alert */
 .notif-alert-info {
     padding-left: .9375rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.notif-alert-info h6 {
+.notif-alert-info a {
     font-size: 12px;
 }
+
+.search-chat {
+    display: flex;
+    padding: .3125rem .625rem;
+    background-color: #fafafa;
+}
+
+.search-chat i {
+    color: var(--icon-color);
+    font-size: .75rem;
+    padding: 0rem 1.625rem;
+}
+
+.search-chat button, .search-chat input {
+    background-color: white;
+    border: .02rem solid #eaeaea;
+    outline: none;
+}
+
+.search-chat input {
+    width: 100%;
+    font-size: .75rem;
+}
+
+
+
 /* left column */
 
 .right-col{
