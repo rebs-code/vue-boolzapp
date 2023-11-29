@@ -34,7 +34,7 @@
       <div class="main-container col-10">
         <div class="left-col flex-shrink-0">
           <header class="profile">
-            <div class="profile-info">
+            <div class="profile-info align-items-center">
               <div>
                 <img
                   class="circled-icon"
@@ -74,14 +74,16 @@
           <div class="contact-list">
             <ul>
               <li v-for="(contact, index) in contacts" class="profile bg-white border-bottom border-light-subtle">
-                <div>
-                  <img
-                    class="circled-icon"
-                    :src="contact.avatar"
-                    alt="avatar"
-                  />
-                </div>
-                {{ contact.name }}
+                <div class="profile-info">
+                    <div>
+                      <img
+                        class="circled-icon"
+                        :src="contact.avatar"
+                        alt="avatar"
+                      />
+                    </div>
+                    <h6 class="mb-0">{{contact.name}}</h6>
+                  </div>
               </li>
             </ul>
           </div>
