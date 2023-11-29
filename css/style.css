@@ -136,9 +136,15 @@ ul {
   overflow-y: auto;
 }
 
-/* left column */
+/* right column */
 
 .right-col {
   background-color: yellow;
   min-height: calc(100vh - 40px);
+}
+
+.chat-field {
+  height: calc(100vh - 70px - 70px - 40px); /* height is calculated: parent height - (profile height + chat input height) */
+  overflow-y: scroll;
+  background-image: url("../img/mine.jpg");
 }

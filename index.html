@@ -33,7 +33,7 @@
     <div id="app">
       <div class="main-container col-10">
         <div class="left-col flex-shrink-0">
-          <header class="profile">
+          <header class="profile border-end border-dark-subtle">
             <div class="profile-info align-items-center">
               <div>
                 <img
@@ -71,24 +71,48 @@
               aria-label="Search chat"
             />
           </div>
-          <div class="contact-list">
+          <div class="contact-list border-end border-dark-subtle">
             <ul>
-              <li v-for="(contact, index) in contacts" class="profile bg-white border-bottom border-light-subtle">
+              <li
+                v-for="(contact, index) in contacts"
+                class="profile bg-white border-bottom border-light-subtle"
+              >
                 <div class="profile-info">
-                    <div>
-                      <img
-                        class="circled-icon"
-                        :src="contact.avatar"
-                        alt="avatar"
-                      />
-                    </div>
-                    <h6 class="mb-0">{{contact.name}}</h6>
+                  <div>
+                    <img
+                      class="circled-icon"
+                      :src="contact.avatar"
+                      alt="avatar"
+                    />
                   </div>
+                  <h6 class="mb-0">{{contact.name}}</h6>
+                </div>
               </li>
             </ul>
           </div>
         </div>
-        <div class="right-col flex-grow-1"></div>
+        <div class="right-col flex-grow-1">
+          <header class="profile">
+            <div class="profile-info align-items-center">
+              <div>
+                <img
+                  class="circled-icon"
+                  :src="contacts[currentContact].avatar"
+                  alt="contacts[currentContact].name"
+                />
+              </div>
+              <h6 class="mb-0 fw-bold ms-3">
+                {{contacts[currentContact].name}}
+              </h6>
+            </div>
+            <div class="header-left">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </header>
+          <main class="chat-field"></main>
+        </div>
       </div>
     </div>
     <!-- Vue CDN -->
