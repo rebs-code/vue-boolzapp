@@ -33,6 +33,7 @@ ul {
   --header-color: #eaeaea;
   --icon-color: #b1b1b1;
   --dark-grey: #6a7378;
+  --message-sent: #d5f9ba;
 }
 
 /* main container */
@@ -140,7 +141,6 @@ ul {
 /* right column */
 
 .right-col {
-  background-color: yellow;
   min-height: calc(100vh - 40px);
 }
 
@@ -165,4 +165,12 @@ ul {
     margin: 0 2.1875rem;
     display: flex;
     align-items: center;
+}
+
+.message-sent {
+  background-color: var(--message-sent);
+}
+
+.message-received {
+  background-color: #fff;
 }
