@@ -7,6 +7,21 @@ body {
     padding-bottom: 20px;
 }
 
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* colors */
+
+:root {
+    --header-color: #eaeaea;
+    --icon-color: #b1b1b1;
+}
+
 /* main container */
 
 .main-container {
@@ -16,10 +31,46 @@ body {
     display: flex;
 }
 
+/* right column */
+
 .right-col{
     background-color: red;
     min-height: calc(100vh - 40px);
 }
+
+.right-col header {
+    height: 70px;
+    display: flex;
+    padding: .625rem;
+    justify-content: space-between;
+    background-color: var(--header-color);
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+    border: 1px solid white;
+    background-color: transparent; /* Set a background color for the circle */
+    text-align: center;
+    line-height: 50px; /* vertically center the icon */    
+}
+
+.header-right i {
+    font-size: 1.25rem;
+    color: var(--icon-color);
+    margin-right: 1rem;
+    
+}
+
+/* left column */
 
 .left-col{
     background-color: yellow;
