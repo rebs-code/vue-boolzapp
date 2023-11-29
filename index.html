@@ -33,12 +33,16 @@
     <div id="app">
       <div class="main-container col-10">
         <div class="left-col flex-shrink-0">
-          <header>
-            <div class="profile">
+          <header class="profile">
+            <div class="profile-info">
               <div>
-                <img class="circled-icon" src="img/avatar_io.jpg" alt="avatar" />
+                <img
+                  class="circled-icon"
+                  src="img/avatar_io.jpg"
+                  alt="avatar"
+                />
               </div>
-              <h6 class="mb-0">Utente</h6>
+              <h6 class="mb-0">Nome Utente</h6>
             </div>
             <div class="header-left">
               <i class="fa-solid fa-circle-notch"></i>
@@ -48,20 +52,46 @@
           </header>
           <div class="notif-alert d-flex align-items-center">
             <div class="circled-icon bg-white">
-                <i class="fa-solid fa-bell-slash fs-5"></i>
+              <i class="fa-solid fa-bell-slash fs-5"></i>
             </div>
             <div class="notif-alert-info">
-                <h5 class="mb-0 fs-6">Ricevi notifiche di nuovi messaggi</h6>
-                <a class="text-decoration-underline text-secondary" href="#">Attiva notifiche desktop</a>
+              <h5 class="mb-0 fs-6">Ricevi notifiche di nuovi messaggi</h5>
+              <a class="text-decoration-underline text-secondary" href="#"
+                >Attiva notifiche desktop</a
+              >
             </div>
           </div>
           <div class="search-chat">
-            <button type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <input type="text" placeholder="Cerca o inizia nuova chat" aria-label="Search chat" aria-describedby="button-addon1">
+            <button type="button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input
+              type="text"
+              placeholder="Cerca o inizia nuova chat"
+              aria-label="Search chat"
+            />
+          </div>
+          <div class="contacts">
+            <ul>
+              <li v-for="(contact, index) in contacts" class="profile bg-white border-bottom border-light-subtle">
+                <div>
+                  <img
+                    class="circled-icon"
+                    :src="contact.avatar"
+                    alt="avatar"
+                  />
+                </div>
+                {{ contact.name }}
+              </li>
+            </ul>
           </div>
         </div>
         <div class="right-col flex-grow-1"></div>
       </div>
     </div>
+    <!-- Vue CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- my js -->
+    <script src="js/main.js"></script>
   </body>
 </html>
