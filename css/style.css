@@ -38,7 +38,7 @@ ul {
 
 .main-container {
   background-color: blue;
-  min-height: calc(100vh - 40px);
+  height: calc(100vh - 40px);
   margin: auto;
   display: flex;
 }
@@ -83,19 +83,19 @@ ul {
 
 .notif-alert {
   background-color: #8edafc;
-  padding: 0.75rem 1rem;
+  padding: 0rem 1rem;
 }
 
 .notif-alert i {
   color: #8edafc;
 }
 
-/* select second son of notif alert */
 .notif-alert-info {
   padding-left: 0.9375rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  height: 80px;
 }
 
 .notif-alert-info a {
@@ -103,6 +103,7 @@ ul {
 }
 
 .search-chat {
+  height: 40px;
   display: flex;
   padding: 0.3125rem 0.625rem;
   background-color: #fafafa;
@@ -129,6 +130,11 @@ ul {
   width: 100%;
   font-size: 0.75rem;
   border-left: 0;
+}
+
+.contact-list {
+  height: calc(100vh - 70px - 80px - 40px - 40px); /* height is calculated: parent height - (profile height + notif-alert height + search-chat height + search-chat height) */
+  overflow-y: auto;
 }
 
 /* left column */
