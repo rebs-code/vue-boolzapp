@@ -32,6 +32,7 @@ ul {
 :root {
   --header-color: #eaeaea;
   --icon-color: #b1b1b1;
+  --dark-grey: #6a7378;
 }
 
 /* main container */
@@ -147,4 +148,21 @@ ul {
   height: calc(100vh - 70px - 70px - 40px); /* height is calculated: parent height - (profile height + chat input height) */
   overflow-y: scroll;
   background-image: url("../img/mine.jpg");
+}
+
+.chat-input {
+  height: 70px;
+  display: flex;
+  padding: 0.625rem 0;
+  background-color: #f3eeea;
+}
+
+.chat-input-buttons {
+    background-color: transparent;
+    border: 0;
+    color: var(--dark-grey);
+    font-size: 1.5rem;
+    margin: 0 2.1875rem;
+    display: flex;
+    align-items: center;
 }
