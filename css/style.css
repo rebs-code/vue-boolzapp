@@ -174,3 +174,9 @@ ul {
 .message-received {
   background-color: #fff;
 }
+
+/* this overwrites the bootstrap css for inputs */
+.form-control:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
