@@ -138,7 +138,7 @@ ul {
 }
 
 .contact {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .contact:hover {
@@ -175,16 +175,26 @@ ul {
   align-items: center;
 }
 
-.message-sent {
-  background-color: var(--message-sent);
-}
-
-.message-received {
-  background-color: #fff;
-}
-
 /* this overwrites the bootstrap css for inputs */
 .form-control:focus {
   box-shadow: none;
   border-color: transparent;
+}
+
+/* messages */
+
+.message {
+  padding: 0.625rem;
+  margin: 0.625rem;
+  border-radius: 0.625rem;
+  max-width: 40%;
+}
+
+.sent {
+  background-color: var(--message-sent);
+  margin-left: auto;
+}
+
+.received {
+  background-color: #fff;
 }

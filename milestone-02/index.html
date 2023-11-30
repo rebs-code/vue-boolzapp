@@ -83,6 +83,7 @@
               <li
                 v-for="(contact, index) in contacts"
                 class="profile border-bottom border-light-subtle contact"
+                @click="currentContact = index"
               >
                 <div class="profile-info">
                   <div>
@@ -121,11 +122,13 @@
             </div>
           </header>
           <!-- main chat view -->
-          <main class="chat-field">
-            <div class="chat">
+          <main class="chat-field pt-3 px-5">
+            <div class="chat d-flex flex-column">
               <ul>
-                <li v-for="message in contacts[currentContact].messages">
-                  {{ message.message }}
+                <li v-for="element in contacts[currentContact].messages" class="message"
+                :class="element.status === 'sent' ? 'sent' : 'received'"
+                >
+                  {{ element.message }}
                 </li>
               </ul>
             </div>
