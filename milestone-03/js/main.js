@@ -184,7 +184,19 @@ createApp({
           status: "sent",
         });
         this.newMessage = "";
+        this.reply();
       }
     },
+    reply() {
+      setTimeout(() => {
+        this.contacts[this.currentContact].messages.push({
+          date: this.now
+            .setLocale('en-GB')
+            .toLocaleString(luxon.DateTime.DATETIME_SHORT),
+          message: "Ok",
+          status: "received",
+        });
+      }, 1000);
+    }
   },
 }).mount("#app");
