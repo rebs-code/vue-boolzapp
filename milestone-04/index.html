@@ -67,21 +67,22 @@
           </div>
           <!-- search chat -->
           <div class="search-chat">
-            <button type="button">
+            <div>
               <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+            </div>
             <input
               type="text"
               class="form-control"
               placeholder="Cerca o inizia nuova chat"
               aria-label="Search chat"
+              v-model="searchContact"
             />
           </div>
           <!-- contact list -->
           <div class="contact-list border-end border-dark-subtle">
             <ul>
               <li
-                v-for="(contact, index) in contacts"
+                v-for="(contact, index) in searchResult()"
                 class="profile border-bottom border-light-subtle contact"
                 @click="currentContact = index"
               >

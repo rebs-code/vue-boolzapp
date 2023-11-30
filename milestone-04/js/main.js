@@ -171,6 +171,7 @@ createApp({
       currentContact: 0,
       newMessage: "",
       now: luxon.DateTime.now(),
+      searchContact: "",
     };
   },
   methods: {
@@ -178,7 +179,7 @@ createApp({
       if (this.newMessage.trim() !== "") {
         this.contacts[this.currentContact].messages.push({
           date: this.now
-            .setLocale('en-GB')
+            .setLocale("en-GB")
             .toLocaleString(luxon.DateTime.DATETIME_SHORT),
           message: this.newMessage,
           status: "sent",
@@ -191,12 +192,21 @@ createApp({
       setTimeout(() => {
         this.contacts[this.currentContact].messages.push({
           date: this.now
-            .setLocale('en-GB')
+            .setLocale("en-GB")
             .toLocaleString(luxon.DateTime.DATETIME_SHORT),
           message: "Ok",
           status: "received",
         });
       }, 1000);
-    }
+    },
+    searchResult() {
+      if (this.searchContact.trim() !== "") {
+        return this.contacts.filter((contact) =>
+          contact.name.toLowerCase().includes(this.searchContact.toLowerCase())
+        );
+      } else {
+        return this.contacts;
+      }
+    },
   },
 }).mount("#app");
