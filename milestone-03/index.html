@@ -24,7 +24,7 @@
       integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    /> 
+    />
     <!-- my css -->
     <link rel="stylesheet" href="css/style.css" />
     <title>Boolzapp</title>
@@ -125,15 +125,16 @@
           <main class="chat-field pt-3 px-5">
             <div class="chat d-flex flex-column">
               <ul>
-                <li v-for="element in contacts[currentContact].messages" class="message"
-                :class="element.status === 'sent' ? 'sent' : 'received'"
+                <li
+                  v-for="element in contacts[currentContact].messages"
+                  class="message"
+                  :class="element.status === 'sent' ? 'sent' : 'received'"
                 >
                   {{ element.message }}
-                  <span>{{element.date.slice(11, 16)}}</span>
+                  <span>{{element.date.slice(11, 17)}}</span>
                 </li>
               </ul>
             </div>
-          </main>
           </main>
           <!-- chat input -->
           <footer>
@@ -147,6 +148,8 @@
                 placeholder="Scrivi un messaggio"
                 aria-label="Scrivi un messaggio"
                 aria-describedby="button-addon2"
+                v-model="newMessage"
+                @keyup.enter="sendMessage"
               />
               <div id="record-audio" class="chat-input-buttons">
                 <i class="fa-solid fa-microphone" role="button"></i>
@@ -156,6 +159,8 @@
         </div>
       </div>
     </div>
+    <!-- Luxon CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <!-- Vue CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- my js -->
