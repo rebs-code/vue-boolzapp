@@ -134,10 +134,16 @@ ul {
 }
 
 .contact-list {
-  /* height: calc(100vh - 70px - 80px - 40px - 40px); */
   overflow-y: auto;
 }
 
+.contact {
+    background-color: #fff;
+}
+
+.contact:hover {
+  background-color: var(--header-color);
+}
 /* right column */
 
 .right-col {
