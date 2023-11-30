@@ -118,6 +118,7 @@ ul {
 .search-chat input {
   background-color: white;
   border: 0.02rem solid #eaeaea;
+  border-radius: 0;
 }
 
 .search-chat button {
