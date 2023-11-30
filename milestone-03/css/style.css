@@ -184,10 +184,20 @@ ul {
 /* messages */
 
 .message {
+  position: relative;
   padding: 0.625rem;
   margin: 0.625rem;
   border-radius: 0.625rem;
   max-width: 40%;
+}
+
+.message span {
+  font-size: 0.6rem;
+  color: var(--dark-grey);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.3125rem;
 }
 
 .sent {

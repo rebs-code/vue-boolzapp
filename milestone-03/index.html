@@ -129,6 +129,7 @@
                 :class="element.status === 'sent' ? 'sent' : 'received'"
                 >
                   {{ element.message }}
+                  <span>{{element.date.slice(11, 16)}}</span>
                 </li>
               </ul>
             </div>
