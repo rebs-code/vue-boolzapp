@@ -170,7 +170,7 @@ createApp({
       ],
       currentContact: 0,
       newMessage: "",
-      now: luxon.DateTime.now(),
+      // now: luxon.DateTime.now(),
       searchContact: "",
     };
   },
@@ -178,7 +178,7 @@ createApp({
     sendMessage() {
       if (this.newMessage.trim() !== "") {
         this.contacts[this.currentContact].messages.push({
-          date: this.now
+          date: luxon.DateTime.now()
             .setLocale("en-GB")
             .toLocaleString(luxon.DateTime.DATETIME_SHORT),
           message: this.newMessage,
@@ -191,7 +191,7 @@ createApp({
     reply() {
       setTimeout(() => {
         this.contacts[this.currentContact].messages.push({
-          date: this.now
+          date: luxon.DateTime.now()
             .setLocale("en-GB")
             .toLocaleString(luxon.DateTime.DATETIME_SHORT),
           message: "Ok",
