@@ -222,13 +222,25 @@ ul {
   max-width: 40%;
 }
 
-.message span {
+.message .msg-time {
   font-size: 0.6rem;
   color: var(--dark-grey);
   position: absolute;
   bottom: 0;
   right: 0;
   padding: 0.3125rem;
+}
+
+.message .msg-menu {
+  display: none;
+  color: var(--dark-grey);
+  position: absolute;
+  top: 0;
+  right: .3125rem;
+}
+
+.message:hover .msg-menu {
+  display: block;
 }
 
 .sent {
