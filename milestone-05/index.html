@@ -105,8 +105,17 @@
                       class="pt-2 light text-secondary ms-3 font-size-12"
                       v-if="contacts[index].messages.length !== 0"
                     >
-                      {{contacts[index].messages[contacts[index].messages.length - 1].message.length > 30 ? contacts[index].messages[contacts[index].messages.length - 1].message.slice(0, 30) + "..." : contacts[index].messages[contacts[index].messages.length - 1].message}}
+                      {{contacts[index].messages[contacts[index].messages.length
+                      - 1].message.length > 30 ?
+                      contacts[index].messages[contacts[index].messages.length -
+                      1].message.slice(0, 30) + "..." :
+                      contacts[index].messages[contacts[index].messages.length -
+                      1].message}}
                     </span>
+                    <span class="pt-2 light text-secondary ms-3 last-msg-time"
+                      >{{contacts[index].messages[contacts[index].messages.length -
+                        1].date.slice(11, 17)}}</span
+                    >
                   </div>
                 </div>
               </li>

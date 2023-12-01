@@ -73,6 +73,14 @@ ul {
   justify-content: space-between;
   background-color: var(--header-color);
   align-items: center;
+  position: relative;
+}
+
+.profile .last-msg-time {
+  font-size: 0.6rem;
+  position: absolute;
+  top: .625rem;
+  right: .3125rem;
 }
 
 .profile-info {
