@@ -201,12 +201,24 @@ createApp({
     },
     searchResult() {
       if (this.searchContact.trim() !== "") {
-        return this.contacts.filter((contact) =>
-          contact.name.toLowerCase().includes(this.searchContact.toLowerCase())
-        );
+        console.log("I am working");
+        this.contacts.forEach((contact) => {
+          if (!contact.name.toLowerCase().includes(this.searchContact.toLowerCase())) {
+            contact.visible = false;
+          } else {
+            contact.visible = true;
+          }
+        });
       } else {
-        return this.contacts;
+        this.contacts.forEach((contact) => {
+          contact.visible = true;
+        });
       }
+    },
+  },
+  watch: {
+    searchContact() {
+      this.searchResult();
     },
   },
 }).mount("#app");

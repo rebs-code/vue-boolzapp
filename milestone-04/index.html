@@ -84,8 +84,9 @@
           <div class="contact-list border-end border-dark-subtle">
             <ul>
               <li
-                v-for="(contact, index) in searchResult()"
+                v-for="(contact, index) in contacts"
                 class="profile border-light-subtle contact"
+                v-show="contact.visible"
                 @click="currentContact = index"
               >
                 <div class="profile-info">
@@ -161,7 +162,7 @@
                   :class="newMessage.trim() !== '' ? 'hidden' : ''"
                 ></i>
                 <i
-                  class="fa-solid fa-paper-plane"
+                  class="fa-solid fa-paper-plane fa-xs"
                   role="button"
                   :class="newMessage.trim() === '' ? 'hidden' : ''"
                   @click="sendMessage"
