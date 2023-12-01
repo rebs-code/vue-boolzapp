@@ -143,6 +143,15 @@ ul {
 
 .contact {
   background-color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+.contact-list .contact:first-child {
+  border-top:  1px solid transparent;
+}
+
+.contact-list .contact:last-child {
+  border-bottom: none;
 }
 
 .contact:hover {
