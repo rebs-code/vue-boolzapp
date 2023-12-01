@@ -201,9 +201,12 @@ createApp({
     },
     searchResult() {
       if (this.searchContact.trim() !== "") {
-        console.log("I am working");
         this.contacts.forEach((contact) => {
-          if (!contact.name.toLowerCase().includes(this.searchContact.toLowerCase())) {
+          if (
+            !contact.name
+              .toLowerCase()
+              .includes(this.searchContact.toLowerCase())
+          ) {
             contact.visible = false;
           } else {
             contact.visible = true;
