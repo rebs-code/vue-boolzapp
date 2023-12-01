@@ -98,7 +98,16 @@
                       alt="avatar"
                     />
                   </div>
-                  <h6 class="mb-0 ms-3">{{contact.name}}</h6>
+                  <div>
+                    <h6 class="ms-3">{{contact.name}}</h6>
+                    <!-- v-if to check if there are messages to avoid error -->
+                    <span
+                      class="pt-2 light text-secondary ms-3 font-size-12"
+                      v-if="contacts[index].messages.length !== 0"
+                    >
+                      {{contacts[index].messages[contacts[index].messages.length - 1].message.length > 30 ? contacts[index].messages[contacts[index].messages.length - 1].message.slice(0, 30) + "..." : contacts[index].messages[contacts[index].messages.length - 1].message}}
+                    </span>
+                  </div>
                 </div>
               </li>
             </ul>

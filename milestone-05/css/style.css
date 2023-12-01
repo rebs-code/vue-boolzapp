@@ -17,10 +17,6 @@ body {
   display: none;
 }
 
-* {
-  font-family: "Lato", sans-serif;
-}
-
 img {
   max-width: 100%;
 }
@@ -29,6 +25,20 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+/* typo */
+
+.light {
+  font-weight: 300;
+}
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+.font-size-12 {
+  font-size: 12px;
 }
 
 /* colors */
@@ -53,7 +63,7 @@ ul {
 .left-col {
   background-color: #fff;
   min-height: calc(100vh - 40px);
-  min-width: 25rem;
+  max-width: 25rem;
 }
 
 .profile {
@@ -147,7 +157,7 @@ ul {
 }
 
 .contact-list .contact:first-child {
-  border-top:  1px solid transparent;
+  border-top: 1px solid transparent;
 }
 
 .contact-list .contact:last-child {
