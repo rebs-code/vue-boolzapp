@@ -36,7 +36,9 @@
       <!-- main container -->
       <div class="main-container col-10">
         <!-- left column -->
-        <div class="left-col flex-shrink-0 d-flex flex-column border-end border-dark-subtle">
+        <div
+          class="left-col flex-shrink-0 d-flex flex-column border-end border-dark-subtle"
+        >
           <!-- left col header -->
           <header class="profile">
             <div class="profile-info align-items-center">
@@ -134,9 +136,15 @@
                   alt="contacts[currentContact].name"
                 />
               </div>
-              <h6 class="mb-0 fw-bold ms-3">
-                {{contacts[currentContact].name}}
-              </h6>
+              <div>
+                <h6 class="mb-0 fw-bold ms-3">
+                  {{contacts[currentContact].name}}
+                </h6>
+                <h6 class="status mb-0 ms-3 light text-secondary font-size-12">
+                  ultimo accesso alle {{contacts[currentContact].messages[contacts[currentContact].messages.length
+                  - 1].date.slice(11, 17)}}
+                </h6>
+              </div>
             </div>
             <div class="header-left">
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -166,7 +174,12 @@
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Message info</a></li>
                     <li>
-                      <a class="dropdown-item" href="#" @click="deleteMessage(index)">Delete message</a>
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        @click="deleteMessage(index)"
+                        >Delete message</a
+                      >
                     </li>
                   </ul>
                 </li>
