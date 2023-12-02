@@ -140,9 +140,24 @@
                 <h6 class="mb-0 fw-bold ms-3">
                   {{contacts[currentContact].name}}
                 </h6>
-                <h6 class="status mb-0 ms-3 light text-secondary font-size-12">
-                  ultimo accesso alle {{contacts[currentContact].messages[contacts[currentContact].messages.length
-                  - 1].date.slice(11, 17)}}
+                <h6
+                  class="status mb-0 ms-3 light text-secondary font-size-12"
+                  v-if="contacts[currentContact].contactStatus === 'offline'"
+                >
+                  ultimo accesso alle
+                  {{contacts[currentContact].messages[contacts[currentContact].messages.length - 1].date.slice(11, 17)}}
+                </h6>
+                <h6
+                  class="status mb-0 ms-3 light text-secondary font-size-12"
+                  v-else-if="contacts[currentContact].contactStatus === 'online'"
+                >
+                  online
+                </h6>
+                <h6
+                  class="status mb-0 ms-3 light text-secondary font-size-12"
+                  v-else-if="contacts[currentContact].contactStatus === 'typing'"
+                >
+                  sta scrivendo...
                 </h6>
               </div>
             </div>

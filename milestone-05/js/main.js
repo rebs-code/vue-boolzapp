@@ -10,6 +10,7 @@ createApp({
           name: "Michele",
           avatar: "./img/avatar_1.jpg",
           visible: true,
+          contactStatus: "offline",
           messages: [
             {
               date: "10/01/2020, 15:30:55",
@@ -76,6 +77,7 @@ createApp({
           name: "Alessandro B.",
           avatar: "./img/avatar_4.jpg",
           visible: true,
+          contactStatus: "online",
           messages: [
             {
               date: "10/01/2020, 15:30:55",
@@ -205,15 +207,24 @@ createApp({
       }
     },
     reply() {
+      this.contacts[this.currentContact].contactStatus = "online";
       setTimeout(() => {
-        this.contacts[this.currentContact].messages.push({
-          date: luxon.DateTime.now()
-            .setLocale("en-GB")
-            .toLocaleString(luxon.DateTime.DATETIME_SHORT),
-          message: this.replyList[Math.floor(Math.random() * this.replyList.length)],
-          status: "received",
-        });
-      }, 1000);
+        this.contacts[this.currentContact].contactStatus = "typing";
+        setTimeout(() => {
+          this.contacts[this.currentContact].messages.push({
+            date: luxon.DateTime.now()
+              .setLocale("en-GB")
+              .toLocaleString(luxon.DateTime.DATETIME_SHORT),
+            message:
+              this.replyList[Math.floor(Math.random() * this.replyList.length)],
+            status: "received",
+          });
+          this.contacts[this.currentContact].contactStatus = "online";
+          setTimeout(() => {
+            this.contacts[this.currentContact].contactStatus = "offline";
+          }, 3000);
+        }, 1000);
+      }, 3000);
     },
     searchResult() {
       if (this.searchContact.trim() !== "") {
