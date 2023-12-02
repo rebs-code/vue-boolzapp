@@ -168,9 +168,25 @@ createApp({
           ],
         },
       ],
+      replyList: [
+        "Va bene, grazie!",
+        "Capito, ci sentiamo più tardi.",
+        "Non vedo l'ora!",
+        "Perfetto!",
+        "Sì, esattamente così.",
+        "Grazie mille!",
+        "Certo, nessun problema.",
+        "Interessante, grazie per la condivisione!",
+        "Ok, ho capito.",
+        "Ci sentiamo presto!",
+        "Proprio quello che mi serviva!",
+        "Grazie per l'informazione!",
+        "Ecco cosa penso anch'io.",
+        "Non vedo l'ora di saperne di più!",
+        "Ok, nessun problema.",
+      ],
       currentContact: 0,
       newMessage: "",
-      // now: luxon.DateTime.now(),
       searchContact: "",
     };
   },
@@ -194,7 +210,7 @@ createApp({
           date: luxon.DateTime.now()
             .setLocale("en-GB")
             .toLocaleString(luxon.DateTime.DATETIME_SHORT),
-          message: "Ok",
+          message: this.replyList[Math.floor(Math.random() * this.replyList.length)],
           status: "received",
         });
       }, 1000);
@@ -220,7 +236,7 @@ createApp({
     },
     deleteMessage(index) {
       this.contacts[this.currentContact].messages.splice(index, 1);
-    }
+    },
   },
   watch: {
     searchContact() {
