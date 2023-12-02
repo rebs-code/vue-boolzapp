@@ -193,7 +193,7 @@ createApp({
         "Non vedo l'ora di saperne di più!",
         "Ok, nessun problema.",
       ],
-      currentContact: 0,
+      currentContact : null,
       newMessage: "",
       searchContact: "",
     };

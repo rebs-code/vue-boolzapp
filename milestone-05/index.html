@@ -125,7 +125,7 @@
           </div>
         </div>
         <!-- right column -->
-        <div class="right-col flex-grow-1">
+        <div class="right-col flex-grow-1" v-if="currentContact !== null">
           <!-- header right col top of open chat -->
           <header class="profile">
             <div class="profile-info align-items-center">
@@ -145,7 +145,8 @@
                   v-if="contacts[currentContact].contactStatus === 'offline'"
                 >
                   ultimo accesso alle
-                  {{contacts[currentContact].messages[contacts[currentContact].messages.length - 1].date.slice(11, 17)}}
+                  {{contacts[currentContact].messages[contacts[currentContact].messages.length
+                  - 1].date.slice(11, 17)}}
                 </h6>
                 <h6
                   class="status mb-0 ms-3 light text-secondary font-size-12"
@@ -169,7 +170,10 @@
           </header>
           <!-- main chat view -->
           <main class="chat-field pt-3 px-5">
-            <div class="chat d-flex flex-column">
+            <div class="chat d-flex flex-column" v-if="currentContact === null">
+              hello hello
+            </div>
+            <div class="chat d-flex flex-column" v-if="currentContact !== null">
               <ul>
                 <li
                   v-for="(element, index) in contacts[currentContact].messages"
@@ -231,6 +235,32 @@
               </div>
             </div>
           </footer>
+        </div>
+        <div
+          class="right-col flex-grow-1 justify-content-center"
+          v-if="currentContact === null"
+        >
+          <div class="col-6 offset-3 d-flex flex-column align-items-center flex-grow-1 justify-content-center">
+            <img
+              src="img/native-desktop-hero_a22b846aefcd2de817624e95873b2064.png"
+              alt="native desktop"
+              class="w-50"
+            />
+            <h2 class="mt-4">Download Boolzapp for Windows</h2>
+            <h6 class="text-center mt-2">
+              Make calls, share your screen and get a faster experience when you
+              download the Windows app.
+            </h6>
+            <button class="btn btn-outline-secondary bg-brand text-white rounded-pill mt-4">
+              Get the App
+            </button>
+          </div>
+          <div class="d-flex align-items-end">
+            <h6 class="font-size-12 text-secondary mx-auto pb-2">
+              <i class="fa-solid fa-lock"></i> Your personal messages are
+              end-to-end encrypted
+            </h6>
+          </div>
         </div>
       </div>
     </div>

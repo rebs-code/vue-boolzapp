@@ -48,6 +48,11 @@ ul {
   --icon-color: #b1b1b1;
   --dark-grey: #6a7378;
   --message-sent: #d5f9ba;
+  --brand-color: #009688;
+}
+
+.bg-brand {
+  background-color: var(--brand-color);
 }
 
 /* main container */
@@ -183,6 +188,7 @@ ul {
   min-height: calc(100vh - 40px);
   display: flex;
   flex-direction: column;
+  background-color: var(--header-color);
 }
 
 .chat-field {
