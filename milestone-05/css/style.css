@@ -228,6 +228,8 @@ ul {
   margin: 0.625rem;
   border-radius: 0.625rem;
   max-width: 40%;
+  /* work break prevents long words from overflowing the container */
+  word-break: break-word;
 }
 
 .message .msg-time {
