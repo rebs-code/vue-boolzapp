@@ -315,7 +315,7 @@ const app = createApp({
   mounted() {
     setTimeout(() => {
       document.getElementById("splash").style.display = "none";
-    }, 2000);
+    }, 2500);
   },
 });
 
