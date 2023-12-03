@@ -282,10 +282,11 @@
             </div>
           </header>
           <!-- main chat view -->
-          <main class="chat-field pt-3 px-5">
-            <div class="chat d-flex flex-column" v-if="currentContact === null">
-              hello hello
-            </div>
+          <main class="chat-field pt-3 px-5" ref="chatField">
+            <div
+              class="chat d-flex flex-column"
+              v-if="currentContact === null"
+            ></div>
             <div class="chat d-flex flex-column" v-if="currentContact !== null">
               <ul>
                 <li

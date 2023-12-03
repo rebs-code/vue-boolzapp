@@ -211,6 +211,12 @@ createApp({
           message: this.newMessage,
           status: "sent",
         });
+        // scroll to bottom
+        //nextTick is a method that allows you to wait for the DOM to be updated before performing any action
+        this.$nextTick(() => {
+          //sets the scroll position to the bottom of the element
+          this.$refs.chatField.scrollTop = this.$refs.chatField.scrollHeight;
+        });
         this.newMessage = "";
         this.reply();
       }
@@ -227,6 +233,9 @@ createApp({
             message:
               this.replyList[Math.floor(Math.random() * this.replyList.length)],
             status: "received",
+          });
+          this.$nextTick(() => {
+            this.$refs.chatField.scrollTop = this.$refs.chatField.scrollHeight;
           });
           this.contacts[this.currentContact].contactStatus = "online";
           setTimeout(() => {
@@ -285,6 +294,7 @@ createApp({
       ) {
         this.contacts.push({
           name: this.newContactName,
+          // default image
           avatar:
             "https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg",
           visible: true,
