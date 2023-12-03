@@ -2,7 +2,7 @@
 
 const { createApp } = Vue;
 
-createApp({
+const app = createApp({
   data() {
     return {
       contacts: [
@@ -199,6 +199,7 @@ createApp({
       newContactName: "",
       newContactSurname: "",
       newContactAvatar: "",
+      showSplash: true,
     };
   },
   methods: {
@@ -311,4 +312,7 @@ createApp({
       this.searchResult();
     },
   },
-}).mount("#app");
+});
+
+// Mount the Vue app
+app.mount("#app");

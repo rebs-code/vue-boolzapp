@@ -1,4 +1,8 @@
 /* common */
+[v-cloak] {
+  display: none;
+}
+
 body {
   background: linear-gradient(
     to bottom,
