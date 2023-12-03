@@ -160,6 +160,10 @@ background-image: url("../img/mine-dark.jpg");
   font-size: 12px;
 }
 
+.large-font {
+  font-size: 1.4em !important;
+}
+
 /* colors */
 
 :root {

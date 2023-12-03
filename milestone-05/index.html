@@ -61,7 +61,13 @@
                   alt="avatar"
                 />
               </div>
-              <h6 class="mb-0 ms-3" id="username">Nome Utente</h6>
+              <h6
+                class="mb-0 ms-3"
+                id="username"
+                :class="fontLarge ? 'large-font' : ''"
+              >
+                Nome Utente
+              </h6>
             </div>
             <div class="header-left">
               <i class="fa-solid fa-circle-notch"></i>
@@ -75,7 +81,7 @@
               >
                 <i class="fa-solid fa-ellipsis-vertical"></i>
               </span>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu" :class="fontLarge ? 'large-font' : ''">
                 <li>
                   <a
                     class="dropdown-item"
@@ -98,6 +104,7 @@
               <!-- Modal Add Contact -->
               <div
                 class="modal fade"
+                :class="fontLarge ? 'large-font' : ''"
                 id="add-contact-modal"
                 tabindex="-1"
                 aria-labelledby="add-contact-modal"
@@ -109,9 +116,15 @@
                     :class="darkMode === true ? 'dark' : ''"
                   >
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5">Add a new contact</h1>
+                      <h1
+                        class="modal-title fs-5"
+                        :class="fontLarge ? 'large-font' : ''"
+                      >
+                        Add a new contact
+                      </h1>
                       <button
                         type="button"
+                        :class="fontLarge ? 'large-font' : ''"
                         class="btn-close"
                         data-bs-dismiss="modal"
                         aria-label="Close"
@@ -152,6 +165,7 @@
                       <button
                         type="button"
                         class="btn border border-0 btn-outline-danger bg-dark-grey text-white rounded-pill"
+                        :class="fontLarge ? 'large-font' : ''"
                         data-bs-dismiss="modal"
                       >
                         Close
@@ -159,6 +173,7 @@
                       <button
                         type="button"
                         class="btn border border-0 bg-brand text-white rounded-pill button-confirm"
+                        :class="fontLarge ? 'large-font' : ''"
                         @click="addContact"
                         :data-bs-dismiss="newContactName.trim() !== '' ? 'modal' : ''"
                       >
@@ -182,15 +197,25 @@
                     :class="darkMode === true ? 'dark' : ''"
                   >
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5">Settings</h1>
+                      <h1
+                        class="modal-title fs-5"
+                        :class="fontLarge ? 'large-font' : ''"
+                      >
+                        Settings
+                      </h1>
                       <button
                         type="button"
                         class="btn-close"
+                        :class="fontLarge ? 'large-font' : ''"
                         data-bs-dismiss="modal"
                         aria-label="Close"
                       ></button>
                     </div>
-                    <div class="modal-body">
+                    <div
+                      class="modal-body"
+                      :class="fontLarge ? 'large-font' : ''"
+                    >
+                      <!-- switch dark mode -->
                       <div class="form-check form-switch">
                         <input
                           class="form-check-input"
@@ -205,42 +230,19 @@
                           >Switch to Dark Mode</label
                         >
                       </div>
-                      <div class="mb-3">
-                        <label class="form-label">Profile Picture Link</label>
+                      <!-- switch font -->
+                      <div class="form-check form-switch">
                         <input
-                          type="text"
-                          class="form-control"
-                          id="add-contact-avatar"
-                          placeholder=""
-                          v-model="newContactAvatar"
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="flexSwitchtFont"
+                          v-model="fontLarge"
                         />
+                        <label class="form-check-label" for="flexSwitchtFont"
+                          >Switch to Large Font</label
+                        >
                       </div>
-                      <div class="mb-3">
-                        <label class="form-label">Phone Number</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="add-contact-phone"
-                          placeholder=""
-                        />
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn border border-0 btn-outline-danger bg-dark-grey text-white rounded-pill"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button
-                        type="button"
-                        class="btn border border-0 bg-brand text-white rounded-pill button-confirm"
-                        @click="addContact"
-                        :data-bs-dismiss="newContactName.trim() !== '' ? 'modal' : ''"
-                      >
-                        Save
-                      </button>
                     </div>
                   </div>
                 </div>
