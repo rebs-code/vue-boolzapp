@@ -258,6 +258,10 @@ createApp({
       this.contacts[this.currentContact].messages = [];
       this.contacts[this.currentContact].contactStatus = "offline";
     },
+    deleteContact(index) {
+      this.contacts.splice(index, 1);
+      this.currentContact = null;
+    },
   },
   watch: {
     searchContact() {
