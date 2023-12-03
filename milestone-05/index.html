@@ -126,7 +126,7 @@
                         type="button"
                         class="btn border border-0 bg-brand text-white rounded-pill button-confirm"
                         @click="addContact"
-                        data-bs-dismiss="modal"
+                        :data-bs-dismiss="newContactName.trim() !== '' ? 'modal' : ''"
                       >
                         Add contact
                       </button>
