@@ -38,6 +38,13 @@ ul {
   border-color: #fff;
 }
 
+.dark body {
+  background-color: #273443;
+  color: #fff;
+  border-color: #fff;
+}
+
+
 .dark a {
   background-color: #273443;
   color: #fff;
@@ -82,7 +89,21 @@ ul {
   color: #fff;
 }
 
+.dark .active-profile:hover {
+  color: white !important;
+}
+
+.dark .active-profile h6 {
+  color: white !important;
+}
+
 .dark .right-col {
+  background-color: #273443;
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark .search-chat {
   background-color: #273443;
   color: #fff;
   border-color: #fff;
@@ -92,6 +113,10 @@ ul {
   background-color: #273443;
   color: #fff;
   border-color: #fff;
+}
+
+.dark .chat-field {
+background-image: url("../img/mine-dark.jpg");
 }
 
 .dark .notif-alert {

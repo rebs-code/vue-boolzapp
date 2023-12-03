@@ -103,10 +103,7 @@
                 aria-labelledby="add-contact-modal"
                 aria-hidden="true"
               >
-                <div
-                  class="modal-dialog"
-                  
-                >
+                <div class="modal-dialog">
                   <div
                     class="modal-content"
                     :class="darkMode === true ? 'dark' : ''"
@@ -180,7 +177,10 @@
                 aria-hidden="true"
               >
                 <div class="modal-dialog">
-                  <div class="modal-content">
+                  <div
+                    class="modal-content"
+                    :class="darkMode === true ? 'dark' : ''"
+                  >
                     <div class="modal-header">
                       <h1 class="modal-title fs-5">Settings</h1>
                       <button
@@ -319,7 +319,7 @@
         <!-- right column -->
         <div class="right-col flex-grow-1" v-if="currentContact !== null">
           <!-- header right col top of open chat -->
-          <header class="profile">
+          <header class="profile active-profile">
             <div class="profile-info align-items-center">
               <div>
                 <img
