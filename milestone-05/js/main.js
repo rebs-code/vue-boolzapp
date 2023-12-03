@@ -198,6 +198,7 @@ createApp({
       searchContact: "",
       newContactName: "",
       newContactSurname: "",
+      newContactAvatar: "",
     };
   },
   methods: {
@@ -266,15 +267,33 @@ createApp({
     },
     addContact() {
       if (
-        this.newContactName.trim() !== ""
-      )
-      this.contacts.push({
-        name: this.newContactName,
-        avatar: "./img/avatar_8.jpg",
-        visible: true,
-        contactStatus: "offline",
-        messages: [],
-      });
+        this.newContactName.trim() !== "" &&
+        this.newContactAvatar.trim() !== ""
+      ) {
+        this.contacts.push({
+          name: this.newContactName,
+          avatar: this.newContactAvatar,
+          visible: true,
+          contactStatus: "offline",
+          messages: [],
+        });
+        this.newContactName = "";
+        this.newContactAvatar = "";
+      } else if (
+        this.newContactName.trim() !== "" &&
+        this.newContactAvatar.trim() === ""
+      ) {
+        this.contacts.push({
+          name: this.newContactName,
+          avatar:
+            "https://thumbs.dreamstime.com/b/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg",
+          visible: true,
+          contactStatus: "offline",
+          messages: [],
+        });
+        this.newContactName = "";
+        this.newContactAvatar = "";
+      }
     },
   },
   watch: {
