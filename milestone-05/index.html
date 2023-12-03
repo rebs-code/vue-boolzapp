@@ -114,7 +114,9 @@
                       contacts[index].messages[contacts[index].messages.length -
                       1].message}}
                     </span>
-                    <span class="pt-2 light text-secondary ms-3 last-msg-time"
+                    <span
+                      class="pt-2 light text-secondary ms-3 last-msg-time"
+                      v-if="contacts[index].messages.length !== 0"
                       >{{contacts[index].messages[contacts[index].messages.length
                       - 1].date.slice(11, 17)}}</span
                     >
@@ -142,7 +144,7 @@
                 </h6>
                 <h6
                   class="status mb-0 ms-3 light text-secondary font-size-12"
-                  v-if="contacts[currentContact].contactStatus === 'offline'"
+                  v-if="contacts[currentContact].contactStatus === 'offline' && contacts[currentContact].messages.length !== 0"
                 >
                   ultimo accesso alle
                   {{contacts[currentContact].messages[contacts[currentContact].messages.length
@@ -165,7 +167,24 @@
             <div class="header-left">
               <i class="fa-solid fa-magnifying-glass"></i>
               <i class="fa-solid fa-paperclip"></i>
-              <i class="fa-solid fa-ellipsis-vertical"></i>
+              <span
+                class="dropdown msg-menu"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </span>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#" @click="deleteConversation"
+                    >Delete conversation</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Remove contact</a>
+                </li>
+              </ul>
             </div>
           </header>
           <!-- main chat view -->
@@ -240,7 +259,9 @@
           class="right-col flex-grow-1 justify-content-center"
           v-if="currentContact === null"
         >
-          <div class="col-6 offset-3 d-flex flex-column align-items-center flex-grow-1 justify-content-center">
+          <div
+            class="col-6 offset-3 d-flex flex-column align-items-center flex-grow-1 justify-content-center"
+          >
             <img
               src="img/native-desktop-hero_a22b846aefcd2de817624e95873b2064.png"
               alt="native desktop"
@@ -251,7 +272,9 @@
               Make calls, share your screen and get a faster experience when you
               download the Windows app.
             </h6>
-            <button class="btn btn-outline-secondary bg-brand text-white rounded-pill mt-4">
+            <button
+              class="btn btn-outline-secondary bg-brand text-white rounded-pill mt-4"
+            >
               Get the App
             </button>
           </div>

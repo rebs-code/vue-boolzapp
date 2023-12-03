@@ -254,6 +254,10 @@ createApp({
     deleteMessage(index) {
       this.contacts[this.currentContact].messages.splice(index, 1);
     },
+    deleteConversation() {
+      this.contacts[this.currentContact].messages = [];
+      this.contacts[this.currentContact].contactStatus = "offline";
+    },
   },
   watch: {
     searchContact() {
