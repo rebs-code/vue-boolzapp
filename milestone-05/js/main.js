@@ -193,7 +193,7 @@ createApp({
         "Non vedo l'ora di saperne di più!",
         "Ok, nessun problema.",
       ],
-      currentContact : null,
+      currentContact: null,
       newMessage: "",
       searchContact: "",
       newContactName: "",
@@ -265,15 +265,17 @@ createApp({
       this.currentContact = null;
     },
     addContact() {
+      if (
+        this.newContactName.trim() !== ""
+      )
       this.contacts.push({
         name: this.newContactName,
-        surname: this.newContactSurname,
         avatar: "./img/avatar_8.jpg",
         visible: true,
         contactStatus: "offline",
         messages: [],
       });
-    }
+    },
   },
   watch: {
     searchContact() {
