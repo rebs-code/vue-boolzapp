@@ -312,6 +312,11 @@ const app = createApp({
       this.searchResult();
     },
   },
+  mounted() {
+    setTimeout(() => {
+      document.getElementById("splash").style.display = "none";
+    }, 2000);
+  },
 });
 
 // Mount the Vue app
