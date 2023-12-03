@@ -200,7 +200,7 @@ const app = createApp({
       newContactSurname: "",
       newContactAvatar: "",
       showSplash: true,
-      darkMode: true,
+      darkMode: false,
     };
   },
   methods: {

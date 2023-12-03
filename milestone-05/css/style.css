@@ -97,6 +97,10 @@ ul {
   color: white !important;
 }
 
+.dark .msg-menu {
+  color: black !important;
+}
+
 .dark .right-col {
   background-color: #273443;
   color: #fff;
