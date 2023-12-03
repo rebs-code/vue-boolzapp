@@ -196,6 +196,8 @@ createApp({
       currentContact : null,
       newMessage: "",
       searchContact: "",
+      newContactName: "",
+      newContactSurname: "",
     };
   },
   methods: {
@@ -262,6 +264,16 @@ createApp({
       this.contacts.splice(index, 1);
       this.currentContact = null;
     },
+    addContact() {
+      this.contacts.push({
+        name: this.newContactName,
+        surname: this.newContactSurname,
+        avatar: "./img/avatar_8.jpg",
+        visible: true,
+        contactStatus: "offline",
+        messages: [],
+      });
+    }
   },
   watch: {
     searchContact() {

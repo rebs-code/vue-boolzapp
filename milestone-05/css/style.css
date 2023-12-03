@@ -55,6 +55,10 @@ ul {
   background-color: var(--brand-color);
 }
 
+.bg-dark-grey {
+  background-color: var(--dark-grey);
+}
+
 /* main container */
 
 .main-container {
@@ -63,7 +67,7 @@ ul {
   display: flex;
 }
 
-/* right column */
+/* left column */
 
 .left-col {
   background-color: #fff;
@@ -84,8 +88,8 @@ ul {
 .profile .last-msg-time {
   font-size: 0.6rem;
   position: absolute;
-  top: .625rem;
-  right: .3125rem;
+  top: 0.625rem;
+  right: 0.3125rem;
 }
 
 .profile-info {
@@ -182,6 +186,12 @@ ul {
 .contact:hover {
   background-color: var(--header-color);
 }
+
+/* popup css */
+.button-confirm:hover {
+  background-color: #00584f;
+}
+
 /* right column */
 
 .right-col {
@@ -246,7 +256,7 @@ ul {
   color: var(--dark-grey);
   position: absolute;
   top: 0;
-  right: .3125rem;
+  right: 0.3125rem;
 }
 
 .message:hover .msg-menu {
