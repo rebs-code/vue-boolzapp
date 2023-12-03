@@ -31,6 +31,92 @@ ul {
   margin: 0;
 }
 
+/* dark mode */
+.dark {
+  background-color: #273443;
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark a {
+  background-color: #273443;
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark li {
+  background-color: #273443;
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark header {
+  background-color: #273443;
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark select {
+  background-color: #273443;
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark span {
+  color: #fff !important;
+}
+
+.dark .profile:hover {
+  color: black !important;
+}
+
+.dark .profile:not(#username):hover {
+  color: black;
+}
+
+.dark .profile:not(#username):hover span {
+  color: black !important;
+}
+
+.dark #username {
+  color: #fff;
+}
+
+.dark .right-col {
+  background-color: #273443;
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark .right-col .chat-input {
+  background-color: #273443;
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark .notif-alert {
+  background-color: #5eaccd;
+}
+
+.dark .notif-alert a {
+  background-color: #5eaccd;
+  color: white !important;
+}
+
+.dark .notif-alert i {
+  color: #5eaccd;
+}
+
+.dropdown-menu,
+.dropdown-item {
+  background-color: white !important;
+  color: black !important;
+}
+
+.dropdown-item:hover {
+  background-color: #eaeaea !important;
+}
+
 /* typo */
 
 .light {
@@ -283,10 +369,12 @@ ul {
 }
 
 .sent {
-  background-color: var(--message-sent);
+  background-color: var(--message-sent) !important;
   margin-left: auto;
+  color: black !important;
 }
 
 .received {
-  background-color: #fff;
+  background-color: #fff !important;
+  color: black !important;
 }

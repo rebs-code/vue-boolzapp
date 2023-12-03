@@ -34,17 +34,19 @@
   <body>
     <div id="app" v-cloak>
       <!-- splash page -->
-      <div id="splash">
+      <!-- <div id="splash">
         <div class="splash-content">
           <img
             src="img/boolzapp-animated-logo.gif"
             alt="boolzapp logo splash"
-            srcset=""
           />
         </div>
-      </div>
+      </div> -->
       <!-- main container -->
-      <div class="main-container col-10">
+      <div
+        class="main-container col-10"
+        :class="darkMode === true ? 'dark' : ''"
+      >
         <!-- left column -->
         <div
           class="left-col flex-shrink-0 d-flex flex-column border-end border-dark-subtle"
@@ -59,7 +61,7 @@
                   alt="avatar"
                 />
               </div>
-              <h6 class="mb-0 ms-3">Nome Utente</h6>
+              <h6 class="mb-0 ms-3" id="username">Nome Utente</h6>
             </div>
             <div class="header-left">
               <i class="fa-solid fa-circle-notch"></i>
@@ -83,8 +85,17 @@
                     >Add new contact</a
                   >
                 </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#settings-modal"
+                    >Settings</a
+                  >
+                </li>
               </ul>
-              <!-- Modal -->
+              <!-- Modal Add Contact -->
               <div
                 class="modal fade"
                 id="add-contact-modal"
@@ -92,8 +103,14 @@
                 aria-labelledby="add-contact-modal"
                 aria-hidden="true"
               >
-                <div class="modal-dialog">
-                  <div class="modal-content">
+                <div
+                  class="modal-dialog"
+                  
+                >
+                  <div
+                    class="modal-content"
+                    :class="darkMode === true ? 'dark' : ''"
+                  >
                     <div class="modal-header">
                       <h1 class="modal-title fs-5">Add a new contact</h1>
                       <button
@@ -149,6 +166,80 @@
                         :data-bs-dismiss="newContactName.trim() !== '' ? 'modal' : ''"
                       >
                         Add contact
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Modal Settings -->
+              <div
+                class="modal fade"
+                id="settings-modal"
+                tabindex="-1"
+                aria-labelledby="settings-modal"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5">Settings</h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="flexSwitchtDarkMode"
+                          v-model="darkMode"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="flexSwitchtDarkMode"
+                          >Switch to Dark Mode</label
+                        >
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Profile Picture Link</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="add-contact-avatar"
+                          placeholder=""
+                          v-model="newContactAvatar"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="add-contact-phone"
+                          placeholder=""
+                        />
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn border border-0 btn-outline-danger bg-dark-grey text-white rounded-pill"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                        type="button"
+                        class="btn border border-0 bg-brand text-white rounded-pill button-confirm"
+                        @click="addContact"
+                        :data-bs-dismiss="newContactName.trim() !== '' ? 'modal' : ''"
+                      >
+                        Save
                       </button>
                     </div>
                   </div>

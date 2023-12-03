@@ -200,6 +200,7 @@ const app = createApp({
       newContactSurname: "",
       newContactAvatar: "",
       showSplash: true,
+      darkMode: true,
     };
   },
   methods: {
@@ -312,11 +313,11 @@ const app = createApp({
       this.searchResult();
     },
   },
-  mounted() {
-    setTimeout(() => {
-      document.getElementById("splash").style.display = "none";
-    }, 2500);
-  },
+  // mounted() {
+  //   setTimeout(() => {
+  //     document.getElementById("splash").style.display = "none";
+  //   }, 2500);
+  // },
 });
 
 // Mount the Vue app
