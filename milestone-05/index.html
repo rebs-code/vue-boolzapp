@@ -34,14 +34,14 @@
   <body>
     <div id="app" v-cloak>
       <!-- splash page -->
-      <!-- <div id="splash">
+      <div id="splash">
         <div class="splash-content">
           <img
             src="img/boolzapp-animated-logo.gif"
             alt="boolzapp logo splash"
           />
         </div>
-      </div> -->
+      </div>
       <!-- main container -->
       <div
         class="main-container col-10"
@@ -297,8 +297,9 @@
                     />
                   </div>
                   <div>
-                    <h6 class="ms-3"
-                    :class="fontLarge ? 'large-font' : ''">{{contact.name}}</h6>
+                    <h6 class="ms-3" :class="fontLarge ? 'large-font' : ''">
+                      {{contact.name}}
+                    </h6>
                     <!-- v-if to check if there are messages to avoid error -->
                     <span
                       class="pt-2 light text-secondary ms-3 font-size-12"
@@ -314,6 +315,7 @@
                     </span>
                     <span
                       class="pt-2 light text-secondary ms-3 last-msg-time"
+                      :class="fontLarge ? 'large-font' : ''"
                       v-if="contacts[index].messages.length !== 0"
                       >{{contacts[index].messages[contacts[index].messages.length
                       - 1].date.slice(11, 17)}}</span
@@ -337,11 +339,15 @@
                 />
               </div>
               <div>
-                <h6 class="mb-0 fw-bold ms-3">
+                <h6
+                  class="mb-0 fw-bold ms-3"
+                  :class="fontLarge ? 'large-font' : ''"
+                >
                   {{contacts[currentContact].name}}
                 </h6>
                 <h6
                   class="status mb-0 ms-3 light text-secondary font-size-12"
+                  :class="fontLarge ? 'large-font' : ''"
                   v-if="contacts[currentContact].contactStatus === 'offline' && contacts[currentContact].messages.length !== 0"
                 >
                   ultimo accesso alle
@@ -350,12 +356,14 @@
                 </h6>
                 <h6
                   class="status mb-0 ms-3 light text-secondary font-size-12"
+                  :class="fontLarge ? 'large-font' : ''"
                   v-else-if="contacts[currentContact].contactStatus === 'online'"
                 >
                   online
                 </h6>
                 <h6
                   class="status mb-0 ms-3 light text-secondary font-size-12"
+                  :class="fontLarge ? 'large-font' : ''"
                   v-else-if="contacts[currentContact].contactStatus === 'typing'"
                 >
                   sta scrivendo...
@@ -373,7 +381,7 @@
               >
                 <i class="fa-solid fa-ellipsis-vertical"></i>
               </span>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu" :class="fontLarge ? 'large-font' : ''">
                 <li>
                   <a class="dropdown-item" href="#" @click="deleteConversation"
                     >Delete conversation</a
@@ -391,7 +399,11 @@
             </div>
           </header>
           <!-- main chat view -->
-          <main class="chat-field pt-3 px-5" ref="chatField">
+          <main
+            class="chat-field pt-3 px-5"
+            ref="chatField"
+            :class="fontLarge ? 'large-font' : ''"
+          >
             <div
               class="chat d-flex flex-column"
               v-if="currentContact === null"
@@ -404,7 +416,11 @@
                   :class="element.status === 'sent' ? 'sent' : 'received'"
                 >
                   {{ element.message }}
-                  <span class="msg-time">{{element.date.slice(11, 17)}}</span>
+                  <span
+                    class="msg-time"
+                    :class="fontLarge ? 'large-font-minus' : ''"
+                    >{{element.date.slice(11, 17)}}</span
+                  >
                   <span
                     class="dropdown msg-menu"
                     type="button"
@@ -413,7 +429,10 @@
                   >
                     <i class="fa-solid fa-chevron-down fa-xs"></i>
                   </span>
-                  <ul class="dropdown-menu">
+                  <ul
+                    class="dropdown-menu"
+                    :class="fontLarge ? 'large-font' : ''"
+                  >
                     <li><a class="dropdown-item" href="#">Message info</a></li>
                     <li>
                       <a
@@ -437,6 +456,7 @@
               <input
                 type="text"
                 class="form-control"
+                :class="fontLarge ? 'large-font' : ''"
                 placeholder="Scrivi un messaggio"
                 aria-label="Scrivi un messaggio"
                 aria-describedby="button-addon2"
@@ -470,20 +490,25 @@
               src="img/native-desktop-hero_a22b846aefcd2de817624e95873b2064.png"
               alt="native desktop"
               class="w-50"
+              :class="fontLarge ? 'w-75' : ''"
             />
-            <h2 class="mt-4">Download Boolzapp for Windows</h2>
-            <h6 class="text-center mt-2">
+            <h2 class="mt-4 text-center">Download Boolzapp for Windows</h2>
+            <h6 class="text-center mt-2" :class="fontLarge ? 'large-font' : ''">
               Make calls, share your screen and get a faster experience when you
               download the Windows app.
             </h6>
             <button
               class="btn btn-outline-secondary bg-brand text-white rounded-pill mt-4"
+              :class="fontLarge ? 'large-font' : ''"
             >
               Get the App
             </button>
           </div>
           <div class="d-flex align-items-end">
-            <h6 class="font-size-12 text-secondary mx-auto pb-2">
+            <h6
+              class="font-size-12 text-secondary mx-auto pb-2"
+              :class="fontLarge ? 'large-font' : ''"
+            >
               <i class="fa-solid fa-lock"></i> Your personal messages are
               end-to-end encrypted
             </h6>
