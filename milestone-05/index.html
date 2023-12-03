@@ -250,7 +250,10 @@
             </div>
           </header>
           <!-- notif alert  -->
-          <div class="notif-alert d-flex align-items-center">
+          <div
+            class="notif-alert d-flex align-items-center"
+            :class="fontLarge ? 'large-font' : ''"
+          >
             <div class="circled-icon bg-white">
               <i class="fa-solid fa-bell-slash fs-5"></i>
             </div>
@@ -269,6 +272,7 @@
             <input
               type="text"
               class="form-control"
+              :class="fontLarge ? 'large-font' : ''"
               placeholder="Cerca o inizia nuova chat"
               aria-label="Search chat"
               v-model="searchContact"
@@ -293,10 +297,12 @@
                     />
                   </div>
                   <div>
-                    <h6 class="ms-3">{{contact.name}}</h6>
+                    <h6 class="ms-3"
+                    :class="fontLarge ? 'large-font' : ''">{{contact.name}}</h6>
                     <!-- v-if to check if there are messages to avoid error -->
                     <span
                       class="pt-2 light text-secondary ms-3 font-size-12"
+                      :class="fontLarge ? 'large-font' : ''"
                       v-if="contacts[index].messages.length !== 0"
                     >
                       {{contacts[index].messages[contacts[index].messages.length

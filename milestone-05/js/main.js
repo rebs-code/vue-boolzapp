@@ -201,7 +201,7 @@ const app = createApp({
       newContactAvatar: "",
       showSplash: true,
       darkMode: false,
-      fontLarge: false,
+      fontLarge: true,
     };
   },
   methods: {
